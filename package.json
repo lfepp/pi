@@ -1,0 +1,9 @@
+{
+  "name": "pi",
+  "description": "See how much pi you know",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
