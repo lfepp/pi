@@ -2,4 +2,6 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', function(
 
   $scope.test = 'It works!';
 
+  $scope.piInput = '';
+
 }]);
