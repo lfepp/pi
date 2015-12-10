@@ -1,1 +1,1 @@
-angular.module('pi', ['ui.router', 'angularRoutes', 'MainCtrl']);
+angular.module('pi', ['ui.router', 'angularRoutes', 'MainCtrl', 'MainService']);

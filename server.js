@@ -5,6 +5,8 @@ var app = express();
 
 app.use(express.static(__dirname + '/public'));
 
+// require(__dirname + '/public/js/calculate-pi.js');
+
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/views/index.html');
 })
