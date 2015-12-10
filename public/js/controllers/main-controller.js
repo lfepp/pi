@@ -2,6 +2,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
 
   $scope.test = 'It works!';
   $scope.digit = 0;
+  $scope.correctDigit = true;
 
   $scope.update = function(piInput) {
     $scope.piDigit = PiCheck.checkDigit($scope.digit);
@@ -9,6 +10,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
       console.log('Matching digit');
     } else {
       console.log('Incorrect digit');
+      $scope.correctDigit = false;
     }
     $scope.digit++;
   };
