@@ -11,7 +11,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
     } else {
       console.log('Incorrect digit');
       $scope.correctDigit = false;
-      angular.element(document.getElementById('wrongDigitAlert')).prop('disabled', true);
+      angular.element(document.getElementById('pi-input')).prop('disabled', true);
     }
     $scope.digit++;
   };
