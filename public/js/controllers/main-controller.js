@@ -13,6 +13,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
       console.log('Incorrect digit');
       $scope.correctDigit = false;
       angular.element(document.getElementById('pi-input')).prop('disabled', true);
+      $scope.index--;
     }
     $scope.index++;
     if($scope.index < 2) {
