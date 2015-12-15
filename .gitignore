@@ -28,4 +28,4 @@ node_modules
 public/lib
 
 # Secret files
-app/config/db.js
+app/config/secrets.js
