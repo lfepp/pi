@@ -10,6 +10,8 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', function($ro
     checkDigit: function(digit) {
       var piDigit = pi[digit];
       return piDigit;
+    },
+    end: function() {
     }
   }
 }]);

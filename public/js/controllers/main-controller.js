@@ -9,16 +9,19 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
     $scope.piDigit = PiCheck.checkDigit($scope.index);
     if($scope.piDigit === piInput.slice(-1)) {
       console.log('Matching digit');
-    } else {
+    }
+    else {
       console.log('Incorrect digit');
       $scope.correctDigit = false;
       angular.element(document.getElementById('pi-input')).prop('disabled', true);
       $scope.index--;
+      PiCheck.end();
     }
     $scope.index++;
     if($scope.index < 2) {
       $scope.digit = $scope.index;
-    } else {
+    }
+    else {
       $scope.digit = $scope.index - 1;
     }
   };
