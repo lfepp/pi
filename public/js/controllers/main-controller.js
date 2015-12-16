@@ -26,6 +26,12 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
     }
   };
 
-  console.log(PiCheck.test());
+  $scope.reset = function() {
+    $scope.index = 0;
+    $scope.digit = 0;
+    $scope.correctDigit = true;
+    $scope.piInput = '';
+    angular.element(document.getElementById('pi-input')).prop('disabled', false);
+  };
 
 }]);
