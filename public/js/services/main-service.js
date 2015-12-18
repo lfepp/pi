@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('MainService', []).factory('PiCheck', ['$rootScope', function($rootScope) {
   // Currently have 1,000 digits of pi for performance but I will need more
   // Should create function to find nth digit of pi instead of building out all digits

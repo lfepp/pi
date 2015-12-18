@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scope', 'PiCheck', function($scope, PiCheck) {
 
   $scope.test = 'It works!';
@@ -23,6 +25,12 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
     }
     else {
       $scope.digit = $scope.index - 1;
+    }
+    if($scope.index === 1) {
+      console.log('Adding .');
+      angular.element(document.getElementById('pi-input'))[0].value = '3.';
+      console.log(angular.element(document.getElementById('pi-input'))[0].value);
+      $scope.index++;
     }
   };
 
