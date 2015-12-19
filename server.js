@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var port = process.env.PORT || 9000;
 
 var secrets = require('./app/config/secrets.js');
 
@@ -12,9 +13,8 @@ app.use(bodyParser.json());
 
 mongoose.connect(secrets.db.url);
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/views/index.html');
-})
+require(__dirname + '/app/router/routes.js')(app);
 
-app.listen(process.env.PORT || 9000);
+app.listen(port);
+console.log('App running on port ' + port);
 module.exports = app;
