@@ -11,5 +11,4 @@ module.exports = function(app) {
   app.route('/scoreboard')
     .post(scoreboard.create)
     .get(scoreboard.read);
-
 }

@@ -17,7 +17,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
       $scope.correctDigit = false;
       angular.element(document.getElementById('pi-input')).prop('disabled', true);
       $scope.index--;
-      PiCheck.end();
+      PiCheck.end($scope.digit);
     }
     $scope.index++;
     if($scope.index < 2) {
