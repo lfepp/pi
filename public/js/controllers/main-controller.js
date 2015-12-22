@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scope', 'PiCheck', function($scope, PiCheck) {
+angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scope', '$location', 'PiCheck', function($scope, $location, PiCheck) {
 
   $scope.test = 'It works!';
   $scope.index = 0;
@@ -17,7 +17,7 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
       $scope.correctDigit = false;
       angular.element(document.getElementById('pi-input')).prop('disabled', true);
       $scope.index--;
-      PiCheck.end($scope.digit);
+      $location.path('/high-score');
     }
     $scope.index++;
     if($scope.index < 2) {

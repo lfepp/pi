@@ -10,5 +10,10 @@ $stateProvider
     templateUrl: 'views/home.html',
     controller: 'MainController'
   })
+  .state('high-score', {
+    url: '/high-score',
+    templateUrl: 'views/high-score.html',
+    controller: 'HighScoreController'
+  })
 
 }]);

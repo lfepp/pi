@@ -16,32 +16,39 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', fun
     end: function(digit) {
       console.log('Finsihed with score of ' + digit);
       // Receive current scores
-      var scores = $http({
+      $http({
         method: 'GET',
         url: '/scoreboard'
       })
       .then(function success(response) {
-        console.dir(response);
-        // If there are 20 scores delete the lowest
-        if(response.data.count >= 20) {
-          //Delete the lowest
+        // If fewer than 20 scores, add score
+        if(response.data.count < 20) {
         }
-        // Add high score
-        $http({
-          method: 'POST',
-          url: '/scoreboard'
-        })
-        .then(function success(response) {
-          console.dir(response);
-        },
-        function failure(response) {
-          console.error(response);
-        });
-        // Update rankings
+        //Add IF-THEN logic to check if there is a new high score (less than 20 scores OR higher than 20th)
+          // Show input form for entering name
+          // If there are 20 scores delete the lowest
+          if(response.data.count >= 20) {
+            // Delete the lowest
+          }
+          // Add high score
+          // Update rankings
       },
       function failure(response) {
         console.error(response);
       });
     }
+  }
+
+  function newScore() {
+    $http({
+      method: 'POST',
+      url: '/scoreboard'
+    })
+    .then(function success(response) {
+      console.dir(response);
+    },
+    function failure(response) {
+      console.error(response);
+    });
   }
 }]);
