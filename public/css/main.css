@@ -1,0 +1,22 @@
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.high-score {
+  position: fixed;
+  width: 45%;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media screen and (max-width: 400px) {
+  .high-score {
+    width: 65%;
+  }
+}

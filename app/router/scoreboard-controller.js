@@ -18,7 +18,7 @@ module.exports = {
       }
     })
   },
-  read: function(req, res, next) {
+  list: function(req, res, next) {
     Scoreboard.find({}, function(err, scores) {
       if(err) {
         return next(err);
