@@ -5,7 +5,10 @@ var Scoreboard = mongoose.model('Scoreboard');
 
 module.exports = {
   create: function(req, res, next) {
-    var score = new Scoreboard(req.body);
+    var score = new Scoreboard({
+      name: req.body.name,
+      score: req.body.score
+    });
     score.save(function(err) {
       if(err) {
         console.log(err);
