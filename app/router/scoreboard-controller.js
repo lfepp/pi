@@ -22,7 +22,7 @@ module.exports = {
     })
   },
   list: function(req, res, next) {
-    Scoreboard.find({}, function(err, scores) {
+    Scoreboard.find({}, null, { sort: { score: -1 } }, function(err, scores) {
       if(err) {
         return next(err);
       }

@@ -23,18 +23,16 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
         url: '/scoreboard'
       })
       .then(function success(response) {
+        console.dir(response.data);
         // If fewer than 20 scores, display name pop-up
         if(response.data.length < 20) {
           $state.go('home.high-score');
         }
-        // Add else-if logic for score > score of rank 20
-          // Show input form for entering name
-          // If there are 20 scores delete the lowest
-          if(response.data.count >= 20) {
-            // Delete the lowest
-          }
-          // Add high score
-          // Update rankings
+        else {
+          // If current score > lowest
+            // Delete lowest score
+            // $state.go('home.highscore');
+        }
       },
       function failure(response) {
         console.error(response);
