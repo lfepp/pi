@@ -35,7 +35,7 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
             method: 'DELETE',
             url: '/scoreboard/' + response.data[19]._id
           })
-          // $state.go('home.high-score');
+          $state.go('home.high-score');
         }
         else {
           console.log('Not a new high score, please try again!');
