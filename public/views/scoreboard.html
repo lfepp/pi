@@ -1,0 +1,17 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+    <tr ng-repeat="highScore in highScores">
+      <td>{{ highScore.rank }}</td>
+      <td>{{ highScore.name }}</td>
+      <td>{{ highScore.score }}</td>
+    </tr>
+  </table>
+</div>
+<form>
+  <a ui-sref="home"><button class="btn btn-default" type="submit">Try Again!</button></a>
+</form>

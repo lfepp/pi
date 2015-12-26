@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('pi', ['ui.router', 'angularRoutes', 'MainCtrl', 'MainService', 'HighScoreCtrl']);
+angular.module('pi', ['ui.router', 'angularRoutes', 'MainCtrl', 'MainService', 'HighScoreCtrl', 'ScoreboardCtrl']);
