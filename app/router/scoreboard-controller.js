@@ -30,5 +30,29 @@ module.exports = {
         res.json(scores);
       }
     })
+  },
+  read: function(req, res) {
+    res.json(req.score);
+  },
+  scoreById: function(req, res, next, id) {
+    Scoreboard.findOne({ _id: id }, function(err, score) {
+      if(err) {
+        return next(err);
+      }
+      else {
+        req.score = score;
+        next();
+      }
+    })
+  },
+  delete: function(req, res, next) {
+    req.score.remove(function(err) {
+      if(err) {
+        return next(err);
+      }
+      else {
+        console.log('Deleted score successfully');
+      }
+    })
   }
 }

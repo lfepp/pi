@@ -16,7 +16,7 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
     },
     end: function(digit) {
       userScore = digit;
-      console.log('Finsihed with score of ' + digit);
+      console.log('Finsihed with score of ' + userScore);
       // Receive current scores
       $http({
         method: 'GET',
@@ -28,10 +28,17 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
         if(response.data.length < 20) {
           $state.go('home.high-score');
         }
+        else if(userScore > response.data[19].score) {
+          console.log('Deleting the score with ID ' + response.data[19]._id);
+          // Delete lowest score
+          $http({
+            method: 'DELETE',
+            url: '/scoreboard/' + response.data[19]._id
+          })
+          // $state.go('home.high-score');
+        }
         else {
-          // If current score > lowest
-            // Delete lowest score
-            // $state.go('home.highscore');
+          console.log('Not a new high score, please try again!');
         }
       },
       function failure(response) {

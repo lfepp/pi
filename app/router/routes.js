@@ -11,4 +11,11 @@ module.exports = function(app) {
   app.route('/scoreboard')
     .post(scoreboard.create)
     .get(scoreboard.list);
+
+  app.route('/scoreboard/:scoreId')
+    .get(scoreboard.read)
+    .delete(scoreboard.delete);
+
+  app.param('scoreId', scoreboard.scoreById);
+
 }
