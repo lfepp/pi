@@ -11,7 +11,7 @@ $stateProvider
     controller: 'MainController'
   })
   .state('home.high-score', {
-    url: '/high-score',
+    url: 'high-score',
     templateUrl: 'views/high-score.html',
     controller: 'HighScoreController'
   })
