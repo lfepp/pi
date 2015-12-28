@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(secrets.db.url);
+mongoose.connect(process.env.MONGO_URL || secrets.db.url);
 require(__dirname + '/app/models/scoreboard.js');
 
 require(__dirname + '/app/router/routes.js')(app);
