@@ -7,12 +7,13 @@ var mongoose = require('mongoose');
 var port = process.env.PORT || 9000;
 
 var secrets = require('./app/config/secrets.js');
+console.log(process.env.DB);
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGO_URL || secrets.db.url);
+mongoose.connect(process.env.DB || secrets.db.url);
 require(__dirname + '/app/models/scoreboard.js');
 
 require(__dirname + '/app/router/routes.js')(app);
