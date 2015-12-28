@@ -1,7 +1,6 @@
 <div ui-view></div>
-<p class="jumbotron text-center">Do you think you know pi? Test your own knowledge and enter as many digits as you can.<br>
-So far you've entered {{ digit }} digits</p>
-<div class="alert alert-danger" role="alert" ng-hide="correctDigit">Oh no! You got one wrong! The correct next digit was {{ piDigit }}.</div>
+<p class="jumbotron text-center">Do you think you know pi? Test your knowledge and enter as many digits as you can.<br>
+<strong>Current Digit:</strong> {{ digit }} </p>
 <form>
   <input type="text" ng-model="piInput" id="pi-input" ng-change="update(piInput)" class="form-control" placeholder="3.14...">
 </form>
