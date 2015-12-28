@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 9000;
 
-var secrets = require('./app/config/secrets.js');
+//var secrets = require('./app/config/secrets.js');
 console.log(process.env.DB);
 
 app.use(express.static(__dirname + '/public'));
