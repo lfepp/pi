@@ -5,12 +5,10 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
   $scope.test = 'It works!';
   $scope.index = 0;
   $scope.digit = 0;
-  $scope.correctDigit = true;
 
   $scope.update = function(piInput) {
     $scope.piDigit = PiCheck.checkDigit($scope.index);
     if($scope.piDigit !== piInput.slice(-1)) {
-      $scope.correctDigit = false;
       angular.element(document.getElementById('pi-input')).prop('disabled', true);
       $scope.index--;
       PiCheck.end($scope.digit);
@@ -31,7 +29,6 @@ angular.module('MainCtrl', ['MainService']).controller('MainController', ['$scop
   $scope.reset = function() {
     $scope.index = 0;
     $scope.digit = 0;
-    $scope.correctDigit = true;
     $scope.piInput = '';
     angular.element(document.getElementById('pi-input')).prop('disabled', false);
   };
