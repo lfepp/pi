@@ -1,6 +1,6 @@
 {
-  "name": "pi",
-  "description": "See how many digits you know",
+  "name": "count-to-pi",
+  "description": "Test your pi knowledge and see how many digits you know",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
