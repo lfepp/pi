@@ -29,7 +29,6 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
           $state.go('home.high-score');
         }
         else if(userScore > response.data[19].score) {
-          console.log('Deleting the score with ID ' + response.data[19]._id);
           // Delete lowest score
           $http({
             method: 'DELETE',
@@ -58,7 +57,6 @@ angular.module('MainService', []).factory('PiCheck', ['$rootScope', '$http', '$s
       })
     },
     getScoreboard: function() {
-      console.log('Running getScoreboard()');
       var deferred = $q.defer();
       $http({
         method: 'GET',
